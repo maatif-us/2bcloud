@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 2bcloud
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: 2bcloud
+  template:
+    metadata:
+      labels:
+        app: 2bcloud
+    spec:
+      containers:
+        - name: 2bcloud
+          image: 2bcloud.azurecr.io/test-image:latest
+          ports:
+            - containerPort: 3000
