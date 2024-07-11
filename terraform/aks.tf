@@ -3,6 +3,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
   dns_prefix          = "myaks"
+  kubernetes_version  = "1.26.3"
 
   default_node_pool {
     name       = "default"
@@ -19,9 +20,10 @@ resource "azurerm_kubernetes_cluster" "aks" {
     client_secret = var.client_secret
   }
 
+  role_based_access_control_enabled = true
 
   network_profile {
-    network_plugin = "azure"
+    network_plugin    = "azure"
     load_balancer_sku = "standard"
   }
 
