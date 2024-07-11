@@ -19,11 +19,11 @@ variable "admin_password" {
 }
 
 variable "acr_name" {
-  default = "myacr"
+  default = "2bcloud"
 }
 
 variable "aks_name" {
-  default = "myakscluster"
+  default = "2bcloudakscluster"
 }
 
 variable "client_id" {
